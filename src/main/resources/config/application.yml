@@ -175,3 +175,11 @@ jhipster:
 # ===================================================================
 
 # application:
+
+
+
+
+rqueue:
+  test:
+    echo: echo-queue
+    echo-timespan: 1
