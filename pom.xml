@@ -10,6 +10,10 @@
     <name>Jhipster Rqueue</name>
 
     <repositories>
+        <repository>
+            <id>Maven releases repository</id>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
         <!-- jhipster-needle-maven-repository -->
     </repositories>
 
@@ -282,7 +286,7 @@
         <dependency>
             <groupId>com.github.sonus21</groupId>
             <artifactId>rqueue-spring-boot-starter</artifactId>
-            <version>2.0.1-RELEASE</version>
+            <version>2.0.2-RELEASE</version>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>

@@ -15,9 +15,15 @@
 
 logging:
   level:
-    ROOT: INFO
+    ROOT: DEBUG
     io.github.jhipster: DEBUG
     com.chlegou.demos.rqueue: DEBUG
+    com.github.sonus21.rqueue: DEBUG
+    io.lettuce.core: INFO
+    io.netty: INFO
+    com.github.sonus21.rqueue.listener.RqueueMessagePoller: INFO
+    com.github.sonus21.rqueue.core.DelayedMessageScheduler: INFO
+
 
 spring:
   profiles:

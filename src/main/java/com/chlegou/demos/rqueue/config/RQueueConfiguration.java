@@ -2,6 +2,7 @@ package com.chlegou.demos.rqueue.config;
 
 import com.github.sonus21.rqueue.config.SimpleRqueueListenerContainerFactory;
 import com.github.sonus21.rqueue.listener.RqueueMessageHandler;
+import com.github.sonus21.rqueue.models.enums.PriorityMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.AsyncTaskExecutor;
@@ -22,7 +23,7 @@ public class RQueueConfiguration {
         this.asyncConfiguration = asyncConfiguration;
     }
 
-    @Bean()
+    @Bean
     public SimpleRqueueListenerContainerFactory simpleRqueueListenerContainerFactory(RqueueMessageHandler rqueueMessageHandler) {
         SimpleRqueueListenerContainerFactory factory = new SimpleRqueueListenerContainerFactory();
 
@@ -34,6 +35,7 @@ public class RQueueConfiguration {
         LettuceConnectionFactory redisConnectionFactory = new LettuceConnectionFactory(redisConfiguration);
         redisConnectionFactory.afterPropertiesSet();
         factory.setRedisConnectionFactory(redisConnectionFactory);
+        factory.setPriorityMode(PriorityMode.STRICT);
 
         factory.setTaskExecutor((AsyncTaskExecutor) Objects.requireNonNull(asyncConfiguration.getAsyncExecutor()));
 

@@ -11,7 +11,6 @@ public class TestListener {
 
 
     @RqueueListener(value = "${rqueue.test.echo}")
-    @Async
     public void echoQueue(String message) {
         log.info("echo delayed message: {}", message);
     }
